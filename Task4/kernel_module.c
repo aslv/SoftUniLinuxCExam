@@ -11,6 +11,7 @@ MODULE_LICENSE("GPL");
 
 static char* strArg; // `static' not needed but better
 module_param(strArg, charp, 0); // name, type, permissions
+MODULE_PARM_DESC(strArg, "String argument to be passed"); // self-documented :)
 
 static int show(struct seq_file *m, void *v)
 {
