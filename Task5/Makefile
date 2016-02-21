@@ -5,8 +5,9 @@ CFLAGS=-c -Wall -O # compiler flags
 # -Wall: warnings
 # -O: optimize code
 
-LDFLAGS=-lm # linker flags
-# -lm: will use math.h
+LDFLAGS=-lm -pthread # linker flags
+# -lm: math functions
+# -pthread: multithreading
 
 SOURCES=main.c calc.c figure.c
 OBJECTS=$(SOURCES:.c=.o)
