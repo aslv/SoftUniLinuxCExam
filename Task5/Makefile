@@ -43,3 +43,6 @@ clean:
 	rm -f $(OBJECTS) $(EXECUTABLE)
 # removing objects and executable
 
+# output files:
+# *.o: object files
+# main: executable file
