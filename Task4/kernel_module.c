@@ -20,7 +20,7 @@ static int show(struct seq_file *m, void *v)
 
 static int open(struct inode *inode, struct file *file)
 {
-	return single_open(file, show, NULL);
+	return single_open(file, show, NULL); // file, show, data
 }
 
 static const struct file_operations fops =
@@ -34,7 +34,7 @@ static const struct file_operations fops =
 
 static int __init init(void)
 {
-	proc_create(PROC_NAME, 0, NULL, &fops);
+	proc_create(PROC_NAME, 0, NULL, &fops); // name, mode, paremt, fops
 	return 0;
 }
 
@@ -42,8 +42,7 @@ static void __exit exit(void)
 {
 	printk(LOG_LEVEL "Module unloaded.\n");
 	// This message would be seen with `dmesg'.
-	remove_proc_entry(PROC_NAME, NULL); //
-	// uncomment the previous line if needed
+	remove_proc_entry(PROC_NAME, NULL); // comment if needed
 }
 
 module_init(init);
